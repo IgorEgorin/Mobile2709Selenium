@@ -8,8 +8,9 @@ public class Header extends BasePageObject<Header> {
     public Header(AppiumDriver driver) {
         super(driver);
     }
-
+        
     private By buttonBack = By.xpath("//XCUIElementTypeButton[@name=\"UICatalog\"]");
+
 
 
     public Header clickButtonBack() {

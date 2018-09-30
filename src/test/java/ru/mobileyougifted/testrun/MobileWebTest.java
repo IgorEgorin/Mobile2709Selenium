@@ -19,10 +19,11 @@ public class MobileWebTest extends BaseTest {
         Header header = new Header(driver);
 
 
-        mainPage.clickTitleDataPicker();
+        mainPage.clickTitleDataPicker()
+                .selectDayWheelTwoDataPicker("3");
 
-        header.waitButtonBackInHeaderToload()
-              .clickButtonBack();
+//        header.waitButtonBackInHeaderToload()
+//              .clickButtonBack();
 
         Thread.sleep(5000);
     }

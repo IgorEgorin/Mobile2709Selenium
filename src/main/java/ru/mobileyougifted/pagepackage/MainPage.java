@@ -12,9 +12,16 @@ public class MainPage extends BasePageObject<MainPage> {
     }
 
     private By titleDataPicker = By.xpath("///XCUIElementTypeStaticText[@name=\"Date Picker\"]");
+    private By wheelTwoDataPicker = By.xpath("///XCUIElementTypePickerWheel[1]");
 
     public MainPage clickTitleDataPicker() {
         click(titleDataPicker);
+        return new MainPage(driver);
+    }
+
+
+    public MainPage selectDayWheelTwoDataPicker (String day) {
+        typeIntoField(day,wheelTwoDataPicker);
         return new MainPage(driver);
     }
 
