@@ -1,12 +1,12 @@
 package ru.mobileyougifted.testrun;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
-import ru.mobileyougifted.helperpackage.PreconditionAndOverrideMainMethods;
+import ru.mobileyougifted.helperpackage.BaseTest;
+import ru.mobileyougifted.pagepackage.Header;
 import ru.mobileyougifted.pagepackage.MainPage;
 
 
-public class MobileWebTest extends PreconditionAndOverrideMainMethods {
+public class MobileWebTest extends BaseTest {
 
 
 
@@ -14,10 +14,15 @@ public class MobileWebTest extends PreconditionAndOverrideMainMethods {
     @Test
     public void uiCatalog() throws Exception {
 
-        MainPage mainPage = new MainPage(driver);
-        mainPage.clickOnTitleDataPicker();
-//        driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name=\"Date Picker\"]")).click();
 
+        MainPage mainPage = new MainPage(driver);
+        Header header = new Header(driver);
+
+
+        mainPage.clickTitleDataPicker();
+
+        header.waitButtonBackInHeaderToload()
+              .clickButtonBack();
 
         Thread.sleep(5000);
     }

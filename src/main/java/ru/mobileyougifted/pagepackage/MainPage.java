@@ -2,23 +2,20 @@ package ru.mobileyougifted.pagepackage;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
-import ru.mobileyougifted.helperpackage.PreconditionAndOverrideMainMethods;
+import ru.mobileyougifted.helperpackage.BasePageObject;
 
-public class MainPage {
+public class MainPage extends BasePageObject<MainPage> {
 
-
-    protected AppiumDriver driver;
 
     public MainPage(AppiumDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
+    private By titleDataPicker = By.xpath("///XCUIElementTypeStaticText[@name=\"Date Picker\"]");
 
-    //   private By titleDatePickerMainPage = By.xpath("//XCUIElementTypeStaticText[@name=\"Date Picker\"]");
+    public MainPage clickTitleDataPicker() {
+        click(titleDataPicker);
+        return new MainPage(driver);
+    }
 
-
-   public MainPage clickOnTitleDataPicker() {
-       driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name=\"Date Picker\"]")).click();
-       return new MainPage(driver);
-   }
 }

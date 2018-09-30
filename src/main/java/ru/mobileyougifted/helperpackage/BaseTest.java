@@ -16,10 +16,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class PreconditionAndOverrideMainMethods {
+public class BaseTest {
 
 
     protected AppiumDriver driver;
+
 
 
     @Before
@@ -46,35 +47,5 @@ public class PreconditionAndOverrideMainMethods {
     }
 
 
-//    protected void typeIntoField(String text, By pathToElement) {
-//        find(pathToElement).sendKeys(text);
-//    }
-//
-//    private WebElement find(By pathToElement) {
-//        return driver.findElement(pathToElement);
-//    }
-//
-//    public void click(By pathToElementClick) {
-//        find(pathToElementClick).click();
-//    }
-//
-//    protected void waitingVisibilityOfElement(By pathToElement, Integer... timeSeconds) {
-//        int attempts = 0;
-//        while (attempts < 2) {
-//            try {
-//                waitForElement(ExpectedConditions.visibilityOfElementLocated(pathToElement)
-//                        , (timeSeconds.length > 0 ? timeSeconds[0] : null));
-//                break;
-//            } catch (StaleElementReferenceException e) {
-//                attempts++;
-//            }
-//
-//        }
-//    }
-//
-//    private void waitForElement(ExpectedCondition<WebElement> condition, Integer timeInSeconds) {
-//        timeInSeconds = timeInSeconds != null ? timeInSeconds : 10;
-//        WebDriverWait wait = new WebDriverWait(driver,timeInSeconds );
-//        wait.until(condition);
-//    }
+
 }
