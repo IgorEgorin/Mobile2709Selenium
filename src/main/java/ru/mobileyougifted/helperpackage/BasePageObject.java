@@ -16,7 +16,7 @@ public class BasePageObject<T> {
 
     public BasePageObject(AppiumDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 12);
     }
 
     protected T getPage (String url){
