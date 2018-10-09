@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePageObject<T> {
 
-    protected WebDriverWait wait;
+    public static WebDriverWait wait;
     protected AppiumDriver driver;
 
     public BasePageObject(AppiumDriver driver) {
@@ -55,4 +55,6 @@ public class BasePageObject<T> {
         WebDriverWait wait = new WebDriverWait(driver,timeInSeconds );
         wait.until(condition);
     }
+
+
 }
