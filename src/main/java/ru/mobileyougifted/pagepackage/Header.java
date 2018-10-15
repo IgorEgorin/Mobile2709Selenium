@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import ru.mobileyougifted.helperpackage.BasePageObject;
 
-public class Header extends BasePageObject<Header> {
+public class Header extends BasePageObject {
     public Header(AppiumDriver driver) {
         super(driver);
     }

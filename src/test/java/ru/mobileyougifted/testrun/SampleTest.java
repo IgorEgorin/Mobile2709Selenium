@@ -21,6 +21,7 @@ public class SampleTest extends BaseTest {
         driver.findElement(By.id("Okay / Cancel")).click();
 
         Assert.assertTrue(driver.findElement(By.id("OK")).isEnabled());
+        header.clickButtonBack();
 
     }
 
@@ -68,7 +69,7 @@ public class SampleTest extends BaseTest {
     @Test
     public void datePickerSelectHoursEleven() throws Exception {
 
-        String varHours = "11";
+        String varHours = "10";
 
         driver.findElement(By.id("Date Picker")).click();
 

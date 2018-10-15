@@ -9,7 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePageObject<T> {
+import java.util.List;
+
+public class BasePageObject {
 
     public static WebDriverWait wait;
     protected AppiumDriver driver;
@@ -19,18 +21,17 @@ public class BasePageObject<T> {
         wait = new WebDriverWait(driver, 12);
     }
 
-    protected T getPage (String url){
-        driver.get(url);
-        return (T) this;
-    }
-
-    protected void typeIntoField(String text, By pathToElement) {
+    public void typeIntoField(By pathToElement, String text) {
         find(pathToElement).sendKeys(text);
     }
 
-    private WebElement find(By pathToElement) {
+    public WebElement find(By pathToElement) {
         return driver.findElement(pathToElement);
     }
+
+//    public WebElement finds(By pathToElement,Integer index) {
+//        return (WebElement) driver.findElements(pathToElement).get(index);
+//    }
 
     protected void click(By pathToElementClick) {
         find(pathToElementClick).click();
@@ -55,6 +56,7 @@ public class BasePageObject<T> {
         WebDriverWait wait = new WebDriverWait(driver,timeInSeconds );
         wait.until(condition);
     }
+
 
 
 }
